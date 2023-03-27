@@ -13,10 +13,11 @@ DHA_PQP_params <- list(.95, 0.09434, 4.4, 28.1,NA)
 AL_params <- list(.95, 0.05094, 11.3, 10.6,NA)
 
 #' @title Preset parameters for the SP-AQ drug
+#' @description From SI of Thompson et al (2022). doi: 10.1016/S2214-109X(22)00416-8
 #' @details Use a list of preset parameters for the SP-AQ drug (sulphadoxine-pyrimethamine and amodiaquine)
 #' @details Default parameters, from L to R, are: drug_efficacy: 0.9, drug_rel_c: 0.32, drug_prophylaxis_shape: 4.3, drug_prophylaxis_scale: 38.1, user_prophylaxis=NA
 #' @export
-SP_AQ_params <- list(0.9, 0.32, 4.3, 38.1,NA)
+SP_AQ_params <- list(0.9, 0.32, 3.4, 39.34,NA)
 
 #' @title Parameterise drugs to use in the model
 #'
