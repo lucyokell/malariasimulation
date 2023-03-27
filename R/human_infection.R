@@ -117,14 +117,24 @@ calculate_infections <- function(
   prophylaxis <- rep(0, length(source_vector))
   drug <- variables$drug$get_values(source_vector)
   medicated <- (drug > 0)
+  ##print("medicated")
+  ##print(medicated)
   if (any(medicated)) {
     drug <- drug[medicated]
+    ##print(c("drug", drug))
     drug_time <- variables$drug_time$get_values(source_vector[medicated])
-    prophylaxis[medicated] <- weibull_survival(
-      timestep - drug_time,
-      parameters$drug_prophylaxis_shape[drug],
-      parameters$drug_prophylaxis_scale[drug]
-    )
+    ##print(c("drug_time", drug_time))
+    ##print(c("timestep - drug_time",timestep - drug_time))
+    prophylaxis[medicated] <- get_prophylaxis(timestep - drug_time, parameters$drug_prophylaxis_shape[drug],
+                                              parameters$drug_prophylaxis_scale[drug],
+                                              parameters$user_prophylaxis[drug])
+      
+    #   weibull_survival(
+    #   timestep - drug_time,
+    #   parameters$drug_prophylaxis_shape[drug],
+    #   parameters$drug_prophylaxis_scale[drug]
+    # )
+    ##print(c("prophylaxis",prophylaxis))
   }
 
   # calculate vaccine efficacy

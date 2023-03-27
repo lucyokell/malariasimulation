@@ -160,6 +160,8 @@
 #' model prophylaxis for each drug; default = turned off
 #' * drug_prophylaxis_scale - a vector of scale parameters for weibull curves to
 #' model prophylaxis for each drug; default = turned off
+#' * user_prophylaxis - a user-defined dataframe of time since treatment and prophylaxis 
+#' to model prophylaxis for each drug; default = NULL
 #' * clinical_treatment_drugs - a vector of drugs that are available for
 #' clinically diseased (these values refer to the index in drug_* parameters); default = NULL, NULL, NULL
 #' * clinical_treatment_coverage - a vector of coverage values for each drug; default = NULL, NULL, NULL
@@ -344,6 +346,7 @@ get_parameters <- function(overrides = list()) {
     drug_rel_c             = numeric(0),
     drug_prophylaxis_shape = numeric(0),
     drug_prophylaxis_scale = numeric(0),
+    user_prophylaxis = numeric(0),
     clinical_treatment_drugs     = list(),
     clinical_treatment_timesteps = list(),
     clinical_treatment_coverages = list(),
