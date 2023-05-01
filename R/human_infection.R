@@ -121,7 +121,6 @@ calculate_infections <- function(
   ##print(medicated)
   if (any(medicated)) {
     drug <- drug[medicated]
-    ##print(c("drug", drug))
     drug_time <- variables$drug_time$get_values(source_vector[medicated])
     ##print(c("drug_time", drug_time))
     ##print(c("timestep - drug_time",timestep - drug_time))
