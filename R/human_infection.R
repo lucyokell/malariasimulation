@@ -122,8 +122,6 @@ calculate_infections <- function(
   if (any(medicated)) {
     drug <- drug[medicated]
     drug_time <- variables$drug_time$get_values(source_vector[medicated])
-    ##print(c("drug_time", drug_time))
-    ##print(c("timestep - drug_time",timestep - drug_time))
     prophylaxis[medicated] <- get_prophylaxis(timestep - drug_time, parameters$drug_prophylaxis_shape[drug],
                                               parameters$drug_prophylaxis_scale[drug],
                                               parameters$user_prophylaxis[drug])
