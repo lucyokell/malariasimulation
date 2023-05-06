@@ -4,6 +4,7 @@ INTS <- c(
   'mda',
   'smc',
   'tbv',
+  'liverdrug',
   'bednets',
   'spraying'
 )

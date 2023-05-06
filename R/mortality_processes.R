@@ -109,7 +109,8 @@ reset_target <- function(variables, events, target, state, timestep) {
     variables$rtss_vaccinated$queue_update(-1, target)
     variables$rtss_boosted$queue_update(-1, target)
     variables$tbv_vaccinated$queue_update(-1, target)
-
+    variables$liverdrug_vaccinated$queue_update(-1, target)
+    
     # onwards infectiousness
     variables$infectivity$queue_update(0, target)
 

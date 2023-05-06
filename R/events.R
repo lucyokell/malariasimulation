@@ -7,6 +7,9 @@ create_events <- function(parameters) {
     # TBV event
     tbv_vaccination = individual::Event$new(),
 
+    # TBV event
+    liverdrug_vaccination = individual::Event$new(),
+    
     # Bednet events
     throw_away_net = individual::TargetedEvent$new(parameters$human_population)
   )
@@ -73,6 +76,9 @@ initialise_events <- function(events, variables, parameters) {
   }
   if (parameters$tbv) {
     events$tbv_vaccination$schedule(parameters$tbv_timesteps[[1]] - 1)
+  }
+  if (parameters$liverdrug) {
+    events$liverdrug_vaccination$schedule(parameters$liverdrug_timesteps[[1]] - 1)
   }
 }
 
@@ -186,6 +192,12 @@ attach_event_listeners <- function(
   if (parameters$tbv == 1) {
     events$tbv_vaccination$add_listener(
       create_tbv_listener(variables, events, parameters, correlations, renderer)
+    )
+  }
+  
+  if (parameters$liverdrug == 1) {
+    events$liverdrug_vaccination$add_listener(
+      create_liverdrug_listener(variables, events, parameters, correlations, renderer)
     )
   }
 }

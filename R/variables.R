@@ -210,7 +210,8 @@ create_variables <- function(parameters) {
   )
 
   tbv_vaccinated <- individual::DoubleVariable$new(rep(-1, size))
-
+  liverdrug_vaccinated <- individual::DoubleVariable$new(rep(-1, size))
+  
   # Init vector controls
   net_time <- individual::IntegerVariable$new(rep(-1, size))
   spray_time <- individual::IntegerVariable$new(rep(-1, size))
@@ -240,6 +241,7 @@ create_variables <- function(parameters) {
     rtss_ds = rtss_ds,
     rtss_dl = rtss_dl,
     tbv_vaccinated = tbv_vaccinated,
+    liverdrug_vaccinated = liverdrug_vaccinated,
     net_time = net_time,
     spray_time = spray_time
   )

@@ -111,7 +111,7 @@ calculate_infections <- function(
 
   b <- blood_immunity(variables$ib$get_values(source_humans), parameters)
 
-  source_vector <- source_humans$to_vector()
+  source_vector <- source_humans$to_vector() # only those bitten
 
   # calculate prophylaxis
   prophylaxis <- rep(0, length(source_vector))
@@ -157,7 +157,24 @@ calculate_infections <- function(
     )
   }
 
-  prob <- b * (1 - prophylaxis) * (1 - vaccine_efficacy)
+  ### Liver drug
+  # calculate vaccine efficacy
+  liverdrug_efficacy <- rep(0, length(source_vector))
+  liverdrug_times <- pmax(
+    variables$liverdrug_vaccinated$get_values(source_vector)
+  )
+  liverdrug_treated <- which(liverdrug_times > -1 & timestep-liverdrug_times<=length(parameters$liverdrug_prophylaxis))
+
+  if (length(liverdrug_treated) > 0) {
+    #liverdrug_treated_index <- source_vector[liverdrug_times > -1]
+    liverdrug_efficacy[liverdrug_treated] <- calculate_liverdrug_efficacy(
+      timestep - liverdrug_times[liverdrug_treated],
+      parameters
+    )
+  }
+  
+  
+  prob <- b * (1 - prophylaxis) * (1 - vaccine_efficacy) * (1 - liverdrug_efficacy)
   infected <- bitset_at(source_humans, bernoulli_multi_p(prob))
 
   incidence_renderer(

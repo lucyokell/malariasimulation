@@ -124,3 +124,26 @@ set_tbv <- function(
   parameters$tbv_ages <- ages
   parameters
 }
+
+
+#' @title Parameterise an TBV strategy
+#' @param parameters a list of parameters to modify
+#' @param timesteps a vector of timesteps for each round of vaccinations
+#' @param coverages the coverage for each round of vaccinations
+#' @param ages for each round (in years)
+#' vaccine
+#' @export
+set_liverdrug <- function(
+  parameters,
+  timesteps,
+  coverages,
+  ages,
+  prophylaxis
+) {
+  parameters$liverdrug <- TRUE
+  parameters$liverdrug_timesteps <- timesteps
+  parameters$liverdrug_coverages <- coverages
+  parameters$liverdrug_ages <- ages
+  parameters$liverdrug_prophylaxis <- prophylaxis
+  parameters
+}
