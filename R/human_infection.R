@@ -166,7 +166,6 @@ calculate_infections <- function(
   liverdrug_treated <- which(liverdrug_times > -1 & timestep-liverdrug_times<=length(parameters$liverdrug_prophylaxis))
 
   if (length(liverdrug_treated) > 0) {
-    #liverdrug_treated_index <- source_vector[liverdrug_times > -1]
     liverdrug_efficacy[liverdrug_treated] <- calculate_liverdrug_efficacy(
       timestep - liverdrug_times[liverdrug_treated],
       parameters
