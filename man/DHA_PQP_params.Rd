@@ -5,7 +5,7 @@
 \alias{DHA_PQP_params}
 \title{Preset parameters for the DHA-PQP drug}
 \format{
-An object of class \code{numeric} of length 4.
+An object of class \code{list} of length 5.
 }
 \usage{
 DHA_PQP_params
@@ -14,8 +14,8 @@ DHA_PQP_params
 From SI of Commun. 5:5606 doi: 10.1038/ncomms6606 (2014)
 }
 \details{
-Use a vector of preset parameters for the DHA-PQP drug (dihydroartemisinin-piperaquine)
+Use a list of preset parameters for the DHA-PQP drug (dihydroartemisinin-piperaquine)
 
-Default parameters, from L to R, are: drug_efficacy: 0.95, drug_rel_c: 0.09434, drug_prophylaxis_shape: 4.4, drug_prophylaxis_scale: 28.1
+Default parameters, from L to R, are: drug_efficacy: 0.95, drug_rel_c: 0.09434, drug_prophylaxis_shape: 4.4, drug_prophylaxis_scale: 28.1, user_prophylaxis (list)=NA
 }
 \keyword{datasets}

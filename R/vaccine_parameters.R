@@ -126,24 +126,27 @@ set_tbv <- function(
 }
 
 
-#' @title Parameterise an TBV strategy
+#' @title Parameterise a liver drug mass administration strategy
 #' @param parameters a list of parameters to modify
-#' @param timesteps a vector of timesteps for each round of vaccinations
-#' @param coverages the coverage for each round of vaccinations
-#' @param ages for each round (in years)
-#' vaccine
+#' @param timesteps a vector of timesteps for each round of drug administration
+#' @param coverages a vector of the coverages for each round of drug administration
+#' @param min_age scalar for the minimum age included
+#' @param max_age scalar for the maximum age included
+#' @param prophylaxis a vector of probability of protection per day.
 #' @export
 set_liverdrug <- function(
   parameters,
   timesteps,
   coverages,
-  ages,
+  min_age,
+  max_age,
   prophylaxis
 ) {
   parameters$liverdrug <- TRUE
   parameters$liverdrug_timesteps <- timesteps
   parameters$liverdrug_coverages <- coverages
-  parameters$liverdrug_ages <- ages
+  parameters$liverdrug_min_age <- min_age
+  parameters$liverdrug_max_age <- max_age
   parameters$liverdrug_prophylaxis <- prophylaxis
   parameters
 }

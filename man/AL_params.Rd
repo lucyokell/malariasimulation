@@ -5,7 +5,7 @@
 \alias{AL_params}
 \title{Preset parameters for the AL drug}
 \format{
-An object of class \code{numeric} of length 4.
+An object of class \code{list} of length 5.
 }
 \usage{
 AL_params
@@ -14,8 +14,8 @@ AL_params
 From SI of Commun. 5:5606 doi: 10.1038/ncomms6606 (2014)
 }
 \details{
-Use a vector of preset parameters for the AL drug (artemether-lumefantrine)
+Use a list of preset parameters for the AL drug (artemether-lumefantrine)
 
-Default parameters, from L to R, are: drug_efficacy: 0.95, drug_rel_c: 0.05094, drug_prophylaxis_shape: 11.3, drug_prophylaxis_scale: 10.6
+Default parameters, from L to R, are: drug_efficacy: 0.95, drug_rel_c: 0.05094, drug_prophylaxis_shape: 11.3, drug_prophylaxis_scale: 10.6, user_prophylaxis=NA
 }
 \keyword{datasets}

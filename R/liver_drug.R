@@ -10,10 +10,8 @@
 create_liverdrug_listener <- function(variables, events, parameters, correlations, renderer) {
   function(timestep) {
     time_index = which(parameters$liverdrug_timesteps == timestep)
-    target <- which(trunc(get_age(
-      variables$birth$get_values(),
-      timestep
-    ) / 365) %in% parameters$liverdrug_ages)
+    ages_d<-get_age(variables$birth$get_values(), timestep)
+    target <- which(ages_d > parameters$liverdrug_min_age & ages_d < parameters$liverdrug_max_age)
     to_vaccinate <- target[sample_intervention(
       target,
       'liverdrug',

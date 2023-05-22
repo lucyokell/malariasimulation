@@ -386,7 +386,8 @@ get_parameters <- function(overrides = list()) {
     liverdrug_prophylaxis = numeric(0),
     liverdrug_timesteps = NULL,
     liverdrug_coverages = NULL,
-    liverdrug_ages = NULL,
+    liverdrug_min_age = NULL,
+    liverdrug_max_age = NULL,
     # tbv
     tbv = FALSE,
     tbv_mt = 35,

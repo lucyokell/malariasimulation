@@ -28,6 +28,8 @@ simulate_infection <- function(
     )
   }
 
+  if((timestep %% 365)==0) print(paste0("year=",timestep/365))
+  
   # Calculate Infected
   infected_humans <- calculate_infections(
     variables,

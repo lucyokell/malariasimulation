@@ -5,17 +5,17 @@
 \alias{SP_AQ_params}
 \title{Preset parameters for the SP-AQ drug}
 \format{
-An object of class \code{numeric} of length 4.
+An object of class \code{list} of length 5.
 }
 \usage{
 SP_AQ_params
 }
 \description{
-Preset parameters for the SP-AQ drug
+From SI of Thompson et al (2022). doi: 10.1016/S2214-109X(22)00416-8
 }
 \details{
-Use a vector of preset parameters for the SP-AQ drug (sulphadoxine-pyrimethamine and amodiaquine)
+Use a list of preset parameters for the SP-AQ drug (sulphadoxine-pyrimethamine and amodiaquine)
 
-Default parameters, from L to R, are: drug_efficacy: 0.9, drug_rel_c: 0.32, drug_prophylaxis_shape: 4.3, drug_prophylaxis_scale: 38.1
+Default parameters, from L to R, are: drug_efficacy: 0.9, drug_rel_c: 0.32, drug_prophylaxis_shape: 4.3, drug_prophylaxis_scale: 38.1, user_prophylaxis=NA
 }
 \keyword{datasets}

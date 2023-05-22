@@ -178,6 +178,8 @@ please set treatment parameters with the convenience functions in
 model prophylaxis for each drug; default = turned off
 \item drug_prophylaxis_scale - a vector of scale parameters for weibull curves to
 model prophylaxis for each drug; default = turned off
+\item user_prophylaxis - a user-defined dataframe of time since treatment and prophylaxis
+to model prophylaxis for each drug; default = NULL
 \item clinical_treatment_drugs - a vector of drugs that are available for
 clinically diseased (these values refer to the index in drug_* parameters); default = NULL, NULL, NULL
 \item clinical_treatment_coverage - a vector of coverage values for each drug; default = NULL, NULL, NULL
